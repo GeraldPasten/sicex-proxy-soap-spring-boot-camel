@@ -1,0 +1,8 @@
+{
+    "payload":{
+         "mensaje":{"idSobre":"${headers.headerIdSobre}"}
+    },
+    "status":"OK",
+    "path":"${headers.CamelHttpUri}",
+    "timestamp":"${headers.currentDate}"
+}

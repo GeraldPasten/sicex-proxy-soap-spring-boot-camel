@@ -1,0 +1,4 @@
+cl/gob/hacienda/sicex/middleware/exception/RuntimeServiceException.class
+cl/gob/hacienda/sicex/middleware/SpringBootRestProxyApplication.class
+cl/gob/hacienda/sicex/middleware/exception/BadRequestException.class
+cl/gob/hacienda/sicex/middleware/procesadores/ProcesadorRequestBeanBase.class

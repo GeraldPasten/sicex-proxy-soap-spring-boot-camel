@@ -1,0 +1,51 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+	xmlns:val="http://valida.aem.gob.cl" xmlns:xd="http://www.w3.org/2000/09/xmldsig#">
+	   <soap:Header/>
+	   <soap:Body>
+	      <val:sobre>
+	         <val:encabezado>
+	            <val:idSobre>${headers.atributo}</val:idSobre>
+	            <val:fechaHora>2014-01-10T15:51:24</val:fechaHora>
+	            <val:proveedor>
+	               <val:nombre>DIPRECA</val:nombre>
+	               <val:servicios>
+                  
+                  <val:servicio>IVV</val:servicio>
+                  
+                  <val:respuestaServicio>
+                     <val:estado>ADMIN</val:estado>
+                     <val:glosa>ADMIN</val:glosa>
+                  </val:respuestaServicio>
+               </val:servicios>
+            </val:proveedor>
+            <val:consumidor>
+               <val:nombre>ADMIN</val:nombre>
+               <val:tramite>CONSULTA DE DATOS DE PRODUCTO</val:tramite>
+               <val:certificado>
+                  <xd:X509Data>
+                     
+                     <xd:X509IssuerSerial>
+                        <xd:X509IssuerName>sdasdasdsad</xd:X509IssuerName>
+                        <xd:X509SerialNumber>2323</xd:X509SerialNumber>
+                     </xd:X509IssuerSerial>
+                  
+                  </xd:X509Data>
+               </val:certificado>
+            </val:consumidor>
+            
+            <val:fechaHoraReq>2014-01-10T15:51:24</val:fechaHoraReq>
+            
+            <val:emisor>asasas</val:emisor>
+            <val:metadataOperacional>
+               <val:estadoSobre>00</val:estadoSobre>
+               <val:glosaSobre>2323</val:glosaSobre>
+            </val:metadataOperacional>
+         </val:encabezado>
+         
+         <val:cuerpo>        
+            <val:documento>1212</val:documento>
+         </val:cuerpo>
+       
+      </val:sobre>
+   </soap:Body>
+</soap:Envelope>

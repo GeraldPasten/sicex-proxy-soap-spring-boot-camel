@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <routeContext id="routeBussiness" xmlns="http://camel.apache.org/schema/spring">
+		
+		<route streamCache="true" >
+			<from uri="direct:runServiceExampleGET" />
+			<log loggingLevel="INFO" message="Consulta Ejemplo Ruta ${body}" />
+			
+			<!-- Aquí lista de atributos recibidos por REST POST request Json formatter, se obtiene atributo y asigna al header de MESSAGE Camel 
+			<setHeader headerName="atributo"><jsonpath>$.atributo</jsonpath></setHeader>-->
+			
+			<!-- Llamada a servicio backend o externo de ejemplo, corresponde a uno de los servicios arquetipos ya proporcionados -->
+			<to uri="velocity:velocity/MainSoapRequestService.vm" />
+
+			<removeHeaders pattern="CamelHttp*"/>
+			<to uri="jetty:http://datagrid-lab.testdatagrid.svc.cluster.local:11222/rest/v2/caches/pcache/luke?authUsername=admin&amp;authPassword=password"/>
+
+			<log message="respuesta del servicio SOAP: ${body}"></log>
+			
+			
+		</route>
+		
+		
+    </routeContext>
+	
+</beans>
